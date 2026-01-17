@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PostDetailActivity"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_navigation"
+        android:id="@+id/scrollView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Back button with text -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <ImageView
+                    android:id="@+id/go_back"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="14dp"
+                    android:src="@drawable/baseline_arrow_back_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Back"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:gravity="center_vertical" />
+            </LinearLayout>
+
+            <!-- CardView containing profile, name, heading, genre, and post content -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="372dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:elevation="8dp"
+                app:cardCornerRadius="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Profile info with date on the right -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <!-- Profile Image -->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            app:cardCornerRadius="20dp"
+                            android:layout_marginEnd="10dp">
+
+                            <ImageView
+                                android:id="@+id/iv_image"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/img_2" />
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- Profile Name -->
+                        <TextView
+                            android:id="@+id/tv_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Profile"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:layout_marginEnd="10dp"/>
+
+                        <!-- Date on the Right -->
+                        <TextView
+                            android:id="@+id/date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_marginEnd="14dp"
+                            android:layout_weight="1"
+                            android:text="Oct 26, 2024"
+                            android:textColor="#AEAEAE"
+                            android:gravity="end" />
+                    </LinearLayout>
+
+                    <!-- Heading -->
+                    <TextView
+                        android:id="@+id/heading"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="How Minimalism Can Transform Your Life in the Digital Age"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!-- Genre -->
+                    <TextView
+                        android:id="@+id/genre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="Lifestyle"
+                        android:textColor="#AEAEAE" />
+
+                    <!-- Post Content -->
+                    <TextView
+                        android:id="@+id/post"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:letterSpacing="0.04"
+                        android:lineHeight="20sp"
+                        android:text="In a world filled with constant notifications, ads, and endless to-do lists, the idea of living a minimalist life feels like a refreshing breath of air. Minimalism isn’t about having an empty home or reducing all your belongings to a backpack. Instead, it’s about creating more space for the things that truly matter. By intentionally curating what we surround ourselves with, both digitally and physically, we gain clarity, focus, and even happiness.
+
+Here are some ways minimalism can help us reclaim our time, energy, and well-being in this fast-paced digital world:
+
+1. Simplifying Digital Clutter
+
+Ever feel stressed just looking at your phone? With endless apps, photo galleries, and email notifications, our devices have become sources of mental clutter. Minimalism teaches us to streamline this: start by removing unused apps, unsubscribing from emails that don’t serve you, and setting boundaries with notifications. A clearer digital space means a clearer mind." />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/post_image_view">
+
+                    </ImageView>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:id="@+id/commentSection">
+
+                <!-- Comment item 1 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Comments"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="20dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/comments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" />
+
+                <!-- Add more comments here as needed -->
+            </LinearLayout>
+
+            <!-- Horizontal LinearLayout to hold ImageView and EditText -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/reader"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/img_2"
+                    android:layout_marginEnd="10dp"/>
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_text_background"
+                    android:gravity="center_vertical"
+                    android:hint="Write a comment..."
+                    android:padding="10dp"
+                    android:textSize="15dp"
+                    android:id="@+id/commentText"/>
+
+                <Button
+                    android:id="@+id/comment_submit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Submit"
+                    android:backgroundTint="#FF6F3C"
+                    android:textColor="@android:color/white"
+                    android:paddingHorizontal="16dp"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <!-- Bottom Navigation Bar -->
+    <LinearLayout
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+
+
+        <ImageView
+            android:id="@+id/home"
+            android:layout_width="0dp"
+            android:layout_height="37dp"
+            android:layout_weight="1"
+            android:src="@drawable/home"
+            android:layout_margin="4dp"/>
+
+        <ImageView
+            android:id="@+id/explore"
+            android:layout_width="0dp"
+            android:layout_height="37dp"
+            android:layout_weight="1"
+            android:src="@drawable/explore"
+            android:layout_margin="4dp"/>
+
+
+
+        <ImageView
+            android:id="@+id/create"
+            android:layout_width="0dp"
+            android:layout_height="37dp"
+            android:layout_weight="1"
+            android:src="@drawable/create"
+            android:layout_margin="4dp"/>
+
+
+
+        <ImageView
+            android:id="@+id/profile"
+            android:layout_width="0dp"
+            android:layout_height="37dp"
+            android:layout_weight="1"
+            android:src="@drawable/profile"
+            android:layout_margin="4dp"/>
+    </LinearLayout>
+
+</RelativeLayout>

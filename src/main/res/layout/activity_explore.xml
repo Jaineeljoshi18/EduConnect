@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#1C1C28">
+
+    <!-- ScrollView to make the main content scrollable -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".dashboard">
+
+            <ImageView
+                android:id="@+id/iv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#FF6F3C"
+                android:src="@drawable/baseline_logout_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.948"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.024" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="122dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/explorehead"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- RecyclerView for scrolling, centered with margins -->
+
+            <SearchView
+                android:id="@+id/search_blog"
+                android:layout_width="372dp"
+                android:layout_height="45dp"
+                android:background="@drawable/edit_text_background"
+                android:iconifiedByDefault="false"
+                android:queryHint="Search"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.41"
+                app:layout_constraintStart_toStartOf="@+id/imageView"
+                app:layout_constraintTop_toTopOf="@+id/imageView"
+                app:layout_constraintVertical_bias="0.961" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="374dp"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+                android:layout_marginTop="20dp"
+                android:nestedScrollingEnabled="true"
+
+                app:layout_constraintEnd_toEndOf="@+id/imageView"
+                app:layout_constraintStart_toStartOf="@+id/imageView"
+                app:layout_constraintTop_toBottomOf="@+id/imageView"
+                app:layout_constraintVertical_bias="0.5"
+                tools:listitem="@layout/blog_item" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <!-- Fixed Bottom Navigation -->
+    <LinearLayout
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/home"
+            android:layout_width="0dp"
+            android:layout_height="37dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:src="@drawable/homed" />
+
+        <ImageView
+            android:id="@+id/explore"
+            android:layout_width="0dp"
+            android:layout_height="37dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:src="@drawable/explored" />
+
+        <ImageView
+            android:id="@+id/create"
+            android:layout_width="0dp"
+            android:layout_height="37dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:src="@drawable/create" />
+
+        <ImageView
+            android:id="@+id/profile"
+            android:layout_width="0dp"
+            android:layout_height="37dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:src="@drawable/profile" />
+    </LinearLayout>
+
+</LinearLayout>

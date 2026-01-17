@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:background="@android:color/white">
+
+    <!-- Profile Image -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:cardCornerRadius="20dp"
+        android:layout_marginLeft="20dp">
+
+        <ImageView
+            android:id="@+id/comment_user_img"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/img_2" /> <!-- Replace with your default profile image -->
+    </androidx.cardview.widget.CardView>
+
+    <!-- Comment Container -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <!-- Horizontal layout for username, time, and delete -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp">
+
+            <TextView
+                android:id="@+id/comment_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10:20"
+                android:textSize="12sp"
+                android:textColor="@android:color/darker_gray"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp" />
+
+            <!-- Username -->
+            <TextView
+                android:id="@+id/comment_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Username"
+                android:textColor="@color/black"
+                android:layout_marginLeft="5dp"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_below="@id/comment_date"/>
+
+            <!-- Delete TextView positioned at the right -->
+            <ImageView
+                android:id="@+id/delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_delete_24"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="20dp"/> <!-- Adjust margin for spacing -->
+        </RelativeLayout>
+
+        <!-- Comment Text -->
+        <TextView
+            android:id="@+id/comment_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="This is a comment."
+            android:textSize="12sp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_marginTop="4dp" />
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
